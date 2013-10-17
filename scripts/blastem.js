@@ -25,7 +25,8 @@ var POINTS;
 var pointsCount=0;
 var ENEMY_CONTROLLER;
 var dt;
-var IMAGE_SOURCES = {playerImage: "images/plane.png", 
+var IMAGE_SOURCES = {playerImage1: "images/planebody.png", 
+						playerImage2:"images/planetail.png", 
 						tornadoImage: "images/tornado.png", 
 						rainImage: "images/rain.png", 
 						hailImage: "images/hail.png", 
@@ -59,8 +60,11 @@ function init(){
 			//temporary bounding box
 			ctx.fillStyle ="rgba(0, 255, 0, 0.66)";
 			ctx.strokeRect(this.x-halfW,this.y-halfH,this.width,this.height);
+			ctx.strokeRect(this.x-halfW-89,this.y-halfH-72,this.width-50,this.height+59);
 			//draw player sprite
-			ctx.drawImage(images["playerImage"],this.x-halfW,this.y-halfH,this.width,this.height);
+			ctx.drawImage(images["playerImage1"],this.x-halfW,this.y-halfH,this.width,this.height);
+			ctx.drawImage(images["playerImage2"],this.x-halfW-89,this.y-halfH-72,this.width-50,this.height+59);
+		},
 		},
 		
 		initParticle: function(p){
